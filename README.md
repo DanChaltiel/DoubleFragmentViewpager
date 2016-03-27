@@ -19,5 +19,5 @@ You can see get a sample project for Android Studio on <a href="https://github.c
 ## Screenshots
 Example screenshot
 
-<img src="DoubleViewpager/src/images/screenshot.png">
+<img src="images/screenshot.png">
 
