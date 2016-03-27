@@ -42,7 +42,7 @@ public class SampleFragment extends BaseChildFragment {
 
     /**
      * This method hides the one of mother class {@link fr.chaltiel.doublefragmentviewpager.fragments.BaseChildFragment BaseChildFragment}. <br/>
-     * Not implementing it would result in an IllegalStateException. <br/>
+     * Not implementing it would result in an IllegalStateException.  <br/>
      * It is static and is called inside {@link fr.chaltiel.doublefragmentviewpager.adapters.VerticalPagerAdapter VerticalPagerAdapter} using reflection, hence the absence of Override and the Unused warning
      *
      * @param horiz the horizontal position in the horizontal adapter

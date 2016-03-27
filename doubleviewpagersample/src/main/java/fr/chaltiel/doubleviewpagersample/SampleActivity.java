@@ -26,7 +26,7 @@ public class SampleActivity extends AppCompatActivity implements OnClickListener
         );
         doubleViewPager.setAdapter(doubleViewPagerAdapter);
 
-        //convenience buttons
+        //convenience  buttons
         final Button buttons[] = {(Button) findViewById(R.id.buttonE), (Button) findViewById(R.id.buttonN), (Button) findViewById(R.id.buttonS), (Button) findViewById(R.id.buttonW)};
         for (Button button : buttons) {
             button.setOnClickListener(this);
