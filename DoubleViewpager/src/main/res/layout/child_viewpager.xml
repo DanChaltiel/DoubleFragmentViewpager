@@ -6,7 +6,7 @@
               android:layout_height="match_parent"
               android:background="#fffb00">
 
-    <fr.chaltiel.doubleviewpager.pagers.VerticalViewPager
+    <fr.chaltiel.doublefragmentviewpager.pagers.VerticalViewPager
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:tag="VerticalViewPager de child_viewpager"

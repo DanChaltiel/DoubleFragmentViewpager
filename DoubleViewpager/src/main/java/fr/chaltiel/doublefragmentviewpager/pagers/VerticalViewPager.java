@@ -7,10 +7,10 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-// TODO: 25/03/2016 the touch zone for horizontal swipe is really on edges... wonder why...
+// TODO: 25/03/2016 the touch zone for horizontal swipe is really on edges... I wonder why...
 
 /**
- * credits for this VerticalViewPager class : http://stackoverflow.com/a/22797619/3888000
+ * @author Brett from http://stackoverflow.com/a/22797619/3888000
  */
 public class VerticalViewPager extends ViewPager {
 

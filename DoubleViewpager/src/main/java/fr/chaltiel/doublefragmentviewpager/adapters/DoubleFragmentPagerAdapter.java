@@ -1,6 +1,5 @@
 package fr.chaltiel.doublefragmentviewpager.adapters;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -20,16 +19,20 @@ public class DoubleFragmentPagerAdapter extends FragmentStatePagerAdapter {
 
     private final Class<?extends BaseChildFragment> mChildFragmentClass;
     private final int size;
-//    private Context mContext;
-    private List<VerticalPagerAdapter> mAdapters;
 
-    public DoubleFragmentPagerAdapter(FragmentManager fm, Context ctx, Class<?extends BaseChildFragment> childFragmentClass) {
+    /**
+     * The adapter of DoubleViewPager
+     * @param fm getSupportFragmentManager()
+     * @param childFragmentClass the class of the child fragment extends {@link BaseChildFragment} that will hold the view
+     */
+    @SuppressWarnings("unchecked") //reflection is unchecked...
+    public DoubleFragmentPagerAdapter(FragmentManager fm, Class<? extends BaseChildFragment> childFragmentClass) {
         super(fm);
         mChildFragmentClass = childFragmentClass;
         int tSize = -1;
         try {
-            Method m = mChildFragmentClass.getDeclaredMethod("getVerticalPagerAdapterList", Context.class, FragmentManager.class);
-            List<VerticalPagerAdapter> adapterList = (List<VerticalPagerAdapter>) m.invoke(null, ctx, fm);
+            Method m = mChildFragmentClass.getDeclaredMethod("getVerticalPagerAdapterList", FragmentManager.class);
+            List<VerticalPagerAdapter> adapterList = (List<VerticalPagerAdapter>) m.invoke(null, fm);
             tSize = adapterList.size();
         } catch (Exception e) {
             Log.d("DoubleViewPager", "Exception when invoking getVerticalPagerAdapterList()", e);

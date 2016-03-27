@@ -1,17 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="fr.chaltiel.doubleviewpagersample.SampleActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activity.LifeGraphActivity">
 
-    <TextView
+    <fr.chaltiel.doublefragmentviewpager.pagers.DoubleViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toStartOf="@+id/buttonE"
+        android:layout_toLeftOf="@+id/buttonE"
+        android:layout_toRightOf="@+id/buttonW"
+        android:layout_toEndOf="@+id/buttonW"
+        android:layout_below="@+id/buttonN"
+        android:layout_above="@+id/buttonS"/>
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:text=">"
+        android:id="@+id/buttonE"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/buttonN"/>
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:text="&lt;"
+        android:id="@+id/buttonW"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/buttonS"/>
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="v"
+        android:id="@+id/buttonS"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/buttonE"
+        android:layout_toStartOf="@+id/buttonE"/>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="^"
+        android:id="@+id/buttonN"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/buttonE"
+        android:layout_alignEnd="@+id/buttonE"
+        android:layout_toRightOf="@+id/buttonW"
+        android:layout_toEndOf="@+id/buttonW"/>
+
 </RelativeLayout>

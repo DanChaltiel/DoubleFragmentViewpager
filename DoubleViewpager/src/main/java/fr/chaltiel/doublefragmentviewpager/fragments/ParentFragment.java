@@ -1,6 +1,5 @@
 package fr.chaltiel.doublefragmentviewpager.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -20,7 +18,7 @@ import fr.chaltiel.doublefragmentviewpager.pagers.VerticalViewPager;
 
 
 /**
- * Fragment Parent = mouvement horizontal
+ * Parent Fragment, horizontal movements only, holds the Child Fragment inside {@link fr.chaltiel.doublefragmentviewpager.pagers.VerticalViewPager a vertical Viewpager}
  */
 public class ParentFragment extends Fragment {
     public final static String TAG = "PARENT_FRAGMENT";
@@ -28,7 +26,6 @@ public class ParentFragment extends Fragment {
     private final static String CHILD_CLASS = "child_class";
 
     public static ParentFragment newInstance(int horiz, Class<? extends Fragment> childClass) {
-//            Log.d("Dan", "VerticalPagerAdapter.GraphFragment (154) - newInstance: horiz=" + horiz + ", vert=" + vert);
         ParentFragment rtn = new ParentFragment();
         Bundle args = new Bundle();
         args.putString(TAG, "ParentFragment : H=" + horiz);
@@ -40,26 +37,21 @@ public class ParentFragment extends Fragment {
 
     @Nullable
     @Override
+    @SuppressWarnings("unchecked")
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View layout = inflater.inflate(R.layout.child_viewpager, container, false);
         final VerticalViewPager childVP = (VerticalViewPager) layout.findViewById(R.id.vvp);
-//            final VerticalPagerAdapter adapter = mAdapters.get(position);
         int position = getArguments().getInt(MODULO_HORIZ);
         Class childClass = (Class) getArguments().getSerializable(CHILD_CLASS);
 
         try {
-            Method m = childClass.getDeclaredMethod("getVerticalPagerAdapterList", Context.class, FragmentManager.class);
-
-            ArrayList<VerticalPagerAdapter> adapterList = (ArrayList<VerticalPagerAdapter>) m.invoke(null, getContext(), getChildFragmentManager());
-//            final VerticalPagerAdapter adapter = Model.getVerticalPagerAdapterList(getContext(), getChildFragmentManager()).get(position);
+            assert childClass != null;//just remove the warning
+            Method m = childClass.getDeclaredMethod("getVerticalPagerAdapterList", FragmentManager.class);
+            ArrayList<VerticalPagerAdapter> adapterList = (ArrayList<VerticalPagerAdapter>) m.invoke(null, getChildFragmentManager());
             final VerticalPagerAdapter adapter = adapterList.get(position);
             childVP.setAdapter(adapter);
-        } catch (NoSuchMethodException e) {
-            Log.d("Dan", "VerticalPagerAdapter (51) - getItem : ", e);
-        } catch (InvocationTargetException e) {
-            Log.d("Dan", "VerticalPagerAdapter (53) - getItem : ", e);
-        } catch (IllegalAccessException e) {
-            Log.d("Dan", "VerticalPagerAdapter (55) - getItem : ", e);
+        } catch (Exception e) {//actually NoSuchMethodException, InvocationTargetException or IllegalAccessException, but multicatch require API19
+            Log.d("Dan", "VerticalPagerAdapter onCreateView : ", e);
         }
 
         childVP.setTag(TAG + "_" + position);
