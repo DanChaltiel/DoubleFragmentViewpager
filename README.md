@@ -46,6 +46,8 @@ for a simple implementation.
 
 If you don't need fragments, you should take a look on <a href="https://github.com/juliome10/DoubleViewPager">juliome10's DoubleViewPager</a>.
 
+If you don't need fragments, you should take a look on <a href="https://github.com/juliome10/DoubleViewPager">juliome10's DoubleViewPager</a>.
+
 ## How it works
 This library uses fragments to make a ViewPager that can be swipe horizontally and vertically.  
 It's built upon several vertical viewpagers inside an horizontal viewpager.
