@@ -32,12 +32,11 @@ public abstract class BaseChildFragment extends Fragment {
 
     /**
      * You HAVE TO hide (override) this method !
-     * @param ctx getContext()
      * @param fm getChildFragmentManager() or getFragmentManager()
      * @return an arrayList of all the VerticalPagerAdapter
      */
     @SuppressWarnings("unused")
-    public static List<VerticalPagerAdapter> getVerticalPagerAdapterList(Context ctx, FragmentManager fm){
+    public static List<VerticalPagerAdapter> getVerticalPagerAdapterList(FragmentManager fm){
         throw new IllegalStateException(
                 "\n ------ You have to hide (override) getVerticalPagerAdapterList(Context ctx, FragmentManager fm) in your child class ! ------"
         );}
