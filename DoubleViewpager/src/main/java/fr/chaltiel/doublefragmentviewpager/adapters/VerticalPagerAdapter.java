@@ -33,16 +33,11 @@ public class VerticalPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        Log.d("Dan", "VerticalPagerAdapter (35) - getItem: position=" + position);
         try {
             Method m = mFragmentClass.getDeclaredMethod("newInstance", int.class, int.class);
             return (Fragment) m.invoke(null, mParent, position);
-        } catch (NoSuchMethodException e) {
-            Log.d("Dan", "VerticalPagerAdapter (51) - getItem : ", e);
-        } catch (InvocationTargetException e) {
-            Log.d("Dan", "VerticalPagerAdapter (53) - getItem : ", e);
-        } catch (IllegalAccessException e) {
-            Log.d("Dan", "VerticalPagerAdapter (55) - getItem : ", e);
+        } catch (Exception e) {
+            Log.e("DoubleViewPager", "Exception when invoking newInstance()", e);
         }
         throw new NullPointerException("Oups...");
     }

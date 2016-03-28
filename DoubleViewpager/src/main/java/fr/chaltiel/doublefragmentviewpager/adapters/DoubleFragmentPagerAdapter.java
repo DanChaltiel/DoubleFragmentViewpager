@@ -35,7 +35,7 @@ public class DoubleFragmentPagerAdapter extends FragmentStatePagerAdapter {
             List<VerticalPagerAdapter> adapterList = (List<VerticalPagerAdapter>) m.invoke(null, fm);
             tSize = adapterList.size();
         } catch (Exception e) {
-            Log.d("DoubleViewPager", "Exception when invoking getVerticalPagerAdapterList()", e);
+            Log.e("DoubleViewPager", "Exception when invoking getVerticalPagerAdapterList()", e);
         }
         size=tSize;
     }
