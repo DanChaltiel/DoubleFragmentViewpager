@@ -4,7 +4,7 @@ Horizontal and Vertical ViewPager
 
 You have to provide a fragment class that inherit from BaseChildFragment and that hide its 2 statics methods `public static Fragment newInstance(int horiz, int vert)` and `getVerticalPagerAdapterList(FragmentManager fm)`.  
 
-```
+```java
 public class SampleFragment extends BaseChildFragment {
 
     @Nullable
@@ -56,7 +56,7 @@ It's built upon several vertical viewpagers inside an horizontal viewpager
 
 ## Including in your project
 For including the DoubleFragmentViewPager library, you need to include the jitpack repository in your root build.gradle file : 
-```    
+```groovy
 allprojects {
     repositories { 
         jcenter()
@@ -66,7 +66,7 @@ allprojects {
 ```
 
 Then in your app module build.gradle file :
-```
+```groovy
 dependencies {
     //your other dependencies
     compile 'com.github.DanChaltiel:DoubleFragmentViewpager:v1.0.1'
