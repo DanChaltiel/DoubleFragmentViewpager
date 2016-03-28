@@ -82,6 +82,7 @@ public class SampleFragment extends BaseChildFragment {
         verticalAdapters.add(new VerticalPagerAdapter(fm, 2, 3, fragClass));
         verticalAdapters.add(new VerticalPagerAdapter(fm, 3, 2, fragClass));
         verticalAdapters.add(new VerticalPagerAdapter(fm, 4, 2, fragClass));
+        //the 1st and the 3rd fragments will here have 3 vertical fragments inside
             Log.d("Dan", "Model (23) - getVerticalPagerAdapterList: verticalAdapters null =" + verticalAdapters.size());
 //        }else
 //            Log.d("Dan", "Model (23) - getVerticalPagerAdapterList: verticalAdapters not null =" + verticalAdapters.size());

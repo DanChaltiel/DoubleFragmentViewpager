@@ -4,7 +4,7 @@ Horizontal and Vertical ViewPager
 
 You have to provide a fragment class that inherit from BaseChildFragment and that hide its 2 statics methods `public static Fragment newInstance(int horiz, int vert)` and `getVerticalPagerAdapterList(FragmentManager fm)`.  
 
-```
+```java
 public class SampleFragment extends BaseChildFragment {
 
     @Nullable
@@ -34,20 +34,15 @@ public class SampleFragment extends BaseChildFragment {
     public static List<VerticalPagerAdapter> getVerticalPagerAdapterList(FragmentManager fm) {
         Class<SampleFragment> fragClass = SampleFragment.class;
         List<VerticalPagerAdapter> verticalAdapters = new ArrayList<>();
-        verticalAdapters.add(new VerticalPagerAdapter(fm, 0, 3, fragClass));
-        verticalAdapters.add(new VerticalPagerAdapter(fm, 1, 2, fragClass));
-        verticalAdapters.add(new VerticalPagerAdapter(fm, 2, 3, fragClass));
-        verticalAdapters.add(new VerticalPagerAdapter(fm, 3, 2, fragClass));
-        verticalAdapters.add(new VerticalPagerAdapter(fm, 4, 2, fragClass));
-        //the 1st and the 3rd fragments will have 3 vertical fragments inside
+        //populate verticalAdapters with some VerticalPagerAdapter of fragClass
         return verticalAdapters;
     }
 }
 ```    
 
-
-See <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/tree/master/DoubleViewpagerSample">the Android Studio sample</a> sources for more informations and javadoc.
-
+See <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/blob/master/DoubleViewpagerSample/src/main/java/fr/chaltiel/doubleviewpagersample/SampleActivity.java">SampleActivity.java</a> 
+and <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/blob/master/DoubleViewpagerSample/src/main/java/fr/chaltiel/doubleviewpagersample/SampleFragment.java">SampleFragment.java</a> 
+for a simple implementation
 
 ## How it works
 This library uses fragments to make a ViewPager that can be swipe horizontally and vertically.  
@@ -56,7 +51,7 @@ It's built upon several vertical viewpagers inside an horizontal viewpager
 
 ## Including in your project
 For including the DoubleFragmentViewPager library, you need to include the jitpack repository in your root build.gradle file : 
-```    
+```groovy
 allprojects {
     repositories { 
         jcenter()
@@ -66,7 +61,7 @@ allprojects {
 ```
 
 Then in your app module build.gradle file :
-```
+```groovy
 dependencies {
     //your other dependencies
     compile 'com.github.DanChaltiel:DoubleFragmentViewpager:v1.0.1'
@@ -74,10 +69,10 @@ dependencies {
 ```
 
 ## Samples
-You can see get a sample project for Android Studio on <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/tree/master/DoubleViewpagerSample">Android Studio Sample</a>
+You can see get a sample project for Android Studio in the <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/tree/master/DoubleViewpagerSample">Android Studio Sample</a>
 
 ## Screenshots
-Example screenshot
+Example screenshot of the sample (with ugly colors) :
 
 <img src="images/screenshot.png">
 
