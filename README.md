@@ -44,6 +44,8 @@ See <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/blob/master/
 and <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/blob/master/DoubleViewpagerSample/src/main/java/fr/chaltiel/doubleviewpagersample/SampleFragment.java">SampleFragment.java</a> 
 for a simple implementation
 
+If you don't need fragments, you should take a look on <a href="https://github.com/juliome10/DoubleViewPager">juliome10's DoubleViewPager</a>.
+
 ## How it works
 This library uses fragments to make a ViewPager that can be swipe horizontally and vertically.  
 It's built upon several vertical viewpagers inside an horizontal viewpager 
