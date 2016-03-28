@@ -42,11 +42,13 @@ public class SampleFragment extends BaseChildFragment {
 
 See <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/blob/master/DoubleViewpagerSample/src/main/java/fr/chaltiel/doubleviewpagersample/SampleActivity.java">SampleActivity.java</a> 
 and <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/blob/master/DoubleViewpagerSample/src/main/java/fr/chaltiel/doubleviewpagersample/SampleFragment.java">SampleFragment.java</a> 
-for a simple implementation
+for a simple implementation.
+
+If you don't need fragments, you should take a look on <a href="https://github.com/juliome10/DoubleViewPager">juliome10's DoubleViewPager</a>.
 
 ## How it works
 This library uses fragments to make a ViewPager that can be swipe horizontally and vertically.  
-It's built upon several vertical viewpagers inside an horizontal viewpager 
+It's built upon several vertical viewpagers inside an horizontal viewpager.
 
 
 ## Including in your project
@@ -69,7 +71,7 @@ dependencies {
 ```
 
 ## Samples
-You can see get a sample project for Android Studio in the <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/tree/master/DoubleViewpagerSample">Android Studio Sample</a>
+You can see get a sample project for Android Studio in the <a href="https://github.com/DanChaltiel/DoubleFragmentViewpager/tree/master/DoubleViewpagerSample">Android Studio Sample</a>.
 
 ## Screenshots
 Example screenshot of the sample (with ugly colors) :
