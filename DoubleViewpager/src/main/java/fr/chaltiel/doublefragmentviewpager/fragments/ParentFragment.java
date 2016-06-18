@@ -39,7 +39,7 @@ public class ParentFragment extends Fragment {
     @Override
     @SuppressWarnings("unchecked")
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View layout = inflater.inflate(R.layout.child_viewpager, container, false);
+        final View layout = inflater.inflate(R.layout.parent_fragment, container, false);
         final VerticalViewPager childVP = (VerticalViewPager) layout.findViewById(R.id.vvp);
         int position = getArguments().getInt(MODULO_HORIZ);
         Class childClass = (Class) getArguments().getSerializable(CHILD_CLASS);

@@ -18,6 +18,7 @@ import fr.chaltiel.doublefragmentviewpager.fragments.ParentFragment;
 public class DoubleFragmentPagerAdapter extends FragmentStatePagerAdapter {
 
     private final Class<?extends BaseChildFragment> mChildFragmentClass;
+    private List<VerticalPagerAdapter> adapterList;
     private final int size;
 
     /**
@@ -32,7 +33,7 @@ public class DoubleFragmentPagerAdapter extends FragmentStatePagerAdapter {
         int tSize = -1;
         try {
             Method m = mChildFragmentClass.getDeclaredMethod("getVerticalPagerAdapterList", FragmentManager.class);
-            List<VerticalPagerAdapter> adapterList = (List<VerticalPagerAdapter>) m.invoke(null, fm);
+            adapterList = (List<VerticalPagerAdapter>) m.invoke(null, fm);
             tSize = adapterList.size();
         } catch (Exception e) {
             Log.e("DoubleViewPager", "Exception when invoking getVerticalPagerAdapterList()", e);
@@ -47,7 +48,8 @@ public class DoubleFragmentPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return size;
+        Log.d("Dan", "DoubleFragmentPagerAdapter (51) - getCount: adapterList.size=" + adapterList.size());
+        return adapterList.size();
     }
 
 

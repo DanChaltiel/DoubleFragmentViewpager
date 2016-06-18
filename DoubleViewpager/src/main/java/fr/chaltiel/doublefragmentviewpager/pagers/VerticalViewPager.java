@@ -11,6 +11,7 @@ import android.view.View;
 
 /**
  * @author Brett from http://stackoverflow.com/a/22797619/3888000
+ * purple background for tests
  */
 public class VerticalViewPager extends ViewPager {
 
