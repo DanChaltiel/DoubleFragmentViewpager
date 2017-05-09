@@ -75,6 +75,11 @@ public class VerticalViewPager extends ViewPager {
     }
 
     @Override
+    public boolean canScrollHorizontally(int direction) {
+        return false;
+    }
+
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent ev){
         boolean intercepted = super.onInterceptTouchEvent(swapXY(ev));
         swapXY(ev); // return touch coordinates to original reference frame for any child views
